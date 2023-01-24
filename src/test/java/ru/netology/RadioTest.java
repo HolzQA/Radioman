@@ -8,7 +8,7 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 public class RadioTest {
     @ParameterizedTest
-        @CsvSource({,
+        @CsvSource({
                  "9,0",
                  "3,4"
         })
@@ -21,7 +21,7 @@ public class RadioTest {
     }
 
     @ParameterizedTest
-    @CsvSource({,
+    @CsvSource({
             "0,9",
             "5,4"
     })
@@ -48,7 +48,7 @@ public class RadioTest {
     }
 
     @ParameterizedTest
-    @CsvSource({,
+    @CsvSource({
             "10,0",
             "3,4"
     })
@@ -62,7 +62,7 @@ public class RadioTest {
     }
 
     @ParameterizedTest
-    @CsvSource({,
+    @CsvSource({
             "0,10",
             "5,4"
     })
@@ -78,7 +78,7 @@ public class RadioTest {
     @CsvSource({
             "-1,0",
             "3,3",
-            "10,0"
+            "11,0"
     })
     public void testSetVolume(int insert, int expected) {
         Radiostation radio = new Radiostation();

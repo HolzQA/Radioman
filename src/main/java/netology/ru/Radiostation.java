@@ -13,7 +13,7 @@ public class Radiostation {
     }
 
     public void setNextRadiostation(int oldRadiostation) {
-        if (oldRadiostation = 9) {
+        if (oldRadiostation == 9) {
             currentRadiostation = 0;
         } else {
             currentRadiostation = oldRadiostation + 1;
@@ -21,7 +21,7 @@ public class Radiostation {
     }
 
     public void setPrevRadiostation(int oldRadiostation) {
-        if (oldRadiostation = 0) {
+        if (oldRadiostation == 0) {
             currentRadiostation = 9;
         } else {
             currentRadiostation = oldRadiostation - 1;
@@ -38,19 +38,19 @@ public class Radiostation {
         currentRadiostation = newRadiostation;
     }
 
-    public void setNextVolume() {
-        if (currentVolume = 10) {
+    public void setNextVolume(int oldVolume) {
+        if (oldVolume == 10) {
             currentVolume = 0;
         } else {
-            currentVolume = currentVolume + 1;
+            currentVolume = oldVolume + 1;
         }
     }
 
-    public void setPrevVolume() {
-        if (currentVolume = 0) {
+    public void setPrevVolume(int oldVolume) {
+        if (oldVolume == 0) {
             currentVolume = 10;
         } else {
-            currentVolume = currentVolume - 1;
+            currentVolume = oldVolume - 1;
         }
     }
 
