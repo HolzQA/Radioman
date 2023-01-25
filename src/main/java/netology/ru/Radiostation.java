@@ -38,19 +38,19 @@ public class Radiostation {
         currentRadiostation = newRadiostation;
     }
 
-    public void setNextVolume(int oldVolume) {
-        if (oldVolume == 10) {
+    public void setNextVolume() {
+        if (currentVolume == 10) {
             currentVolume = 0;
         } else {
-            currentVolume = oldVolume + 1;
+            currentVolume = currentVolume + 1;
         }
     }
 
-    public void setPrevVolume(int oldVolume) {
-        if (oldVolume == 0) {
+    public void setPrevVolume() {
+        if (currentVolume == 0) {
             currentVolume = 10;
         } else {
-            currentVolume = oldVolume - 1;
+            currentVolume = currentVolume - 1;
         }
     }
 

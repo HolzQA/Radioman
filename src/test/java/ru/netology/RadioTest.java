@@ -59,7 +59,9 @@ public class RadioTest {
     public void testSetNextVolume(int curVol, int expexted) {
         Radiostation radio = new Radiostation();
 
-        radio.setNextVolume(curVol);
+        radio.setVolume(curVol);
+
+        radio.setNextVolume();
 
         Assertions.assertEquals(expexted, radio.getCurrentVolume());
 
@@ -73,7 +75,9 @@ public class RadioTest {
     public void testSetPrevVolume(int curVol, int expexted) {
         Radiostation radio = new Radiostation();
 
-        radio.setPrevVolume(curVol);
+        radio.setVolume(curVol);
+
+        radio.setPrevVolume();
 
         Assertions.assertEquals(expexted, radio.getCurrentVolume());
     }
