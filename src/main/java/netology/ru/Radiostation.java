@@ -12,19 +12,19 @@ public class Radiostation {
         return currentVolume;
     }
 
-    public void setNextRadiostation(int oldRadiostation) {
-        if (oldRadiostation == 9) {
+    public void setNextRadiostation() {
+        if (currentRadiostation == 9) {
             currentRadiostation = 0;
         } else {
-            currentRadiostation = oldRadiostation + 1;
+            currentRadiostation = currentRadiostation + 1;
         }
     }
 
-    public void setPrevRadiostation(int oldRadiostation) {
-        if (oldRadiostation == 0) {
+    public void setPrevRadiostation() {
+        if (currentRadiostation == 0) {
             currentRadiostation = 9;
         } else {
-            currentRadiostation = oldRadiostation - 1;
+            currentRadiostation = currentRadiostation - 1;
         }
     }
 

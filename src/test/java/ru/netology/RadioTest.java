@@ -15,7 +15,9 @@ public class RadioTest {
     public void testSetNextRadioctation(int curNum, int expexted) {
         Radiostation radio = new Radiostation();
 
-        radio.setNextRadiostation(curNum);
+        radio.setRadiostation(curNum);
+
+        radio.setNextRadiostation();
 
         Assertions.assertEquals(expexted, radio.getCurrentRadiostation());
     }
@@ -28,7 +30,9 @@ public class RadioTest {
     public void testSetPrevRadioctation(int curNum, int expexted) {
         Radiostation radio = new Radiostation();
 
-        radio.setPrevRadiostation(curNum);
+        radio.setRadiostation(curNum);
+
+        radio.setPrevRadiostation();
 
         Assertions.assertEquals(expexted, radio.getCurrentRadiostation());
     }
