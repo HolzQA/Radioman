@@ -3,6 +3,15 @@ package netology.ru;
 public class Radiostation {
     private int currentRadiostation;
     private int currentVolume;
+    public int quantityOfRadiostations = 10;
+    private int MAX_VOLUME = 100;
+
+    public Radiostation(int newQuantOfRadio) {
+        if (newQuantOfRadio <= 0) {
+            return;
+        }
+        quantityOfRadiostations = newQuantOfRadio;
+    }
 
     public int getCurrentRadiostation() {
         return currentRadiostation;
@@ -13,7 +22,7 @@ public class Radiostation {
     }
 
     public void setNextRadiostation() {
-        if (currentRadiostation == 9) {
+        if (currentRadiostation == quantityOfRadiostations-1) {
             currentRadiostation = 0;
         } else {
             currentRadiostation = currentRadiostation + 1;
@@ -22,7 +31,7 @@ public class Radiostation {
 
     public void setPrevRadiostation() {
         if (currentRadiostation == 0) {
-            currentRadiostation = 9;
+            currentRadiostation = quantityOfRadiostations-1;
         } else {
             currentRadiostation = currentRadiostation - 1;
         }
@@ -32,33 +41,31 @@ public class Radiostation {
         if (newRadiostation < 0) {
             return;
         }
-        if (newRadiostation > 9) {
+        if (newRadiostation > quantityOfRadiostations-1) {
             return;
         }
         currentRadiostation = newRadiostation;
     }
 
     public void setNextVolume() {
-        if (currentVolume == 10) {
-            currentVolume = 0;
-        } else {
-            currentVolume = currentVolume + 1;
+        if (currentVolume == MAX_VOLUME) {
+            return;
         }
+        currentVolume = currentVolume + 1;
     }
 
     public void setPrevVolume() {
         if (currentVolume == 0) {
-            currentVolume = 10;
-        } else {
-            currentVolume = currentVolume - 1;
+            return;
         }
+        currentVolume = currentVolume - 1;
     }
 
     public void setVolume(int newVolume) {
         if (newVolume < 0) {
             return;
         }
-        if (newVolume > 10) {
+        if (newVolume > MAX_VOLUME) {
             return;
         }
         currentVolume = newVolume;
