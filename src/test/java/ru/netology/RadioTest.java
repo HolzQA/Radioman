@@ -16,7 +16,7 @@ public class RadioTest {
     public void testSetQuantityOfRadiostation(int newQuant, int expected) {
         Radiostation radio = new Radiostation(newQuant);
 
-       Assertions.assertEquals(expected, radio.quantityOfRadiostations);
+       Assertions.assertEquals(expected, radio.getQuantityOfRadiostations());
     }
 
     @ParameterizedTest

@@ -1,28 +1,27 @@
 package netology.ru;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radiostation {
     private int currentRadiostation;
     private int currentVolume;
     public int quantityOfRadiostations = 10;
-    private int MAX_VOLUME = 100;
+    private int maxVolume = 100;
 
-    public Radiostation(int newQuantOfRadio) {
-        if (newQuantOfRadio <= 0) {
-            return;
+   public Radiostation(int newQuantOfRadio) {
+        if (newQuantOfRadio > 0) {
+            quantityOfRadiostations = newQuantOfRadio;
         }
-        quantityOfRadiostations = newQuantOfRadio;
-    }
-
-    public int getCurrentRadiostation() {
-        return currentRadiostation;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void setNextRadiostation() {
-        if (currentRadiostation == quantityOfRadiostations-1) {
+        if (currentRadiostation == quantityOfRadiostations - 1) {
             currentRadiostation = 0;
         } else {
             currentRadiostation = currentRadiostation + 1;
@@ -31,7 +30,7 @@ public class Radiostation {
 
     public void setPrevRadiostation() {
         if (currentRadiostation == 0) {
-            currentRadiostation = quantityOfRadiostations-1;
+            currentRadiostation = quantityOfRadiostations - 1;
         } else {
             currentRadiostation = currentRadiostation - 1;
         }
@@ -41,14 +40,14 @@ public class Radiostation {
         if (newRadiostation < 0) {
             return;
         }
-        if (newRadiostation > quantityOfRadiostations-1) {
+        if (newRadiostation > quantityOfRadiostations - 1) {
             return;
         }
         currentRadiostation = newRadiostation;
     }
 
     public void setNextVolume() {
-        if (currentVolume == MAX_VOLUME) {
+        if (currentVolume == maxVolume) {
             return;
         }
         currentVolume = currentVolume + 1;
@@ -65,7 +64,7 @@ public class Radiostation {
         if (newVolume < 0) {
             return;
         }
-        if (newVolume > MAX_VOLUME) {
+        if (newVolume > maxVolume) {
             return;
         }
         currentVolume = newVolume;
