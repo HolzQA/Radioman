@@ -11,12 +11,16 @@ import lombok.NoArgsConstructor;
 public class Radiostation {
     private int currentRadiostation;
     private int currentVolume;
-    public int quantityOfRadiostations = 10;
+    public int quantityOfRadiostations;
     private int maxVolume = 100;
 
-   public Radiostation(int newQuantOfRadio) {
-        if (newQuantOfRadio > 0) {
-            quantityOfRadiostations = newQuantOfRadio;
+    public Radiostation() {
+        quantityOfRadiostations = 10;
+    }
+
+    public Radiostation(int quantOfRadio) {
+        if (quantOfRadio >= 0) {
+            quantityOfRadiostations = quantOfRadio;
         }
     }
 
