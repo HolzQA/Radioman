@@ -3,14 +3,23 @@ package netology.ru;
 public class Radiostation {
     private int currentRadiostation;
     private int currentVolume;
-    public int quantityOfRadiostations = 10;
-    private int MAX_VOLUME = 100;
+    public int quantityOfRadiostations;
+    private int max_Volume = 100;
+
+    public Radiostation() {
+        quantityOfRadiostations = 10;
+    }
 
     public Radiostation(int newQuantOfRadio) {
         if (newQuantOfRadio <= 0) {
-            return;
+            quantityOfRadiostations = 10;
+        } else {
+            quantityOfRadiostations = newQuantOfRadio;
         }
-        quantityOfRadiostations = newQuantOfRadio;
+    }
+
+    public int getQuantityOfRadiostations() {
+        return quantityOfRadiostations;
     }
 
     public int getCurrentRadiostation() {
@@ -48,7 +57,7 @@ public class Radiostation {
     }
 
     public void setNextVolume() {
-        if (currentVolume == MAX_VOLUME) {
+        if (currentVolume == max_Volume) {
             return;
         }
         currentVolume = currentVolume + 1;
@@ -65,7 +74,7 @@ public class Radiostation {
         if (newVolume < 0) {
             return;
         }
-        if (newVolume > MAX_VOLUME) {
+        if (newVolume > max_Volume) {
             return;
         }
         currentVolume = newVolume;
