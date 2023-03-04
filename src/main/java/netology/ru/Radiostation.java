@@ -1,67 +1,75 @@
 package netology.ru;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+//@NoArgsConstructor
+@AllArgsConstructor
+@Data
+
 public class Radiostation {
     private int currentRadiostation;
     private int currentVolume;
+    public int quantityOfRadiostations;
+    private int maxVolume = 100;
 
-    public int getCurrentRadiostation() {
-        return currentRadiostation;
+    public Radiostation() {
+        quantityOfRadiostations = 10;
     }
 
-    public int getCurrentVolume() {
-        return currentVolume;
+    public Radiostation(int newQuantOfRadio) {
+        if (newQuantOfRadio <= 0) {
+            quantityOfRadiostations = 10;
+        } else {
+            quantityOfRadiostations = newQuantOfRadio;
+        }
     }
 
     public void setNextRadiostation() {
-        if (currentRadiostation == 9) {
+        if (currentRadiostation == quantityOfRadiostations-1) {
             currentRadiostation = 0;
         } else {
-            currentRadiostation = currentRadiostation + 1;
+            ++currentRadiostation;
         }
     }
 
     public void setPrevRadiostation() {
         if (currentRadiostation == 0) {
-            currentRadiostation = 9;
+            currentRadiostation = quantityOfRadiostations-1;
         } else {
-            currentRadiostation = currentRadiostation - 1;
+            --currentRadiostation;
         }
     }
 
-    public void setRadiostation(int newRadiostation) {
-        if (newRadiostation < 0) {
-            return;
+    public void setCurrentRadiostation(int newRadiostation) {
+        if (newRadiostation >= 0) {
+            if (newRadiostation <= quantityOfRadiostations - 1) {
+                currentRadiostation = newRadiostation;
+            }
         }
-        if (newRadiostation > 9) {
-            return;
-        }
-        currentRadiostation = newRadiostation;
     }
 
     public void setNextVolume() {
-        if (currentVolume == 10) {
-            currentVolume = 0;
-        } else {
-            currentVolume = currentVolume + 1;
+        if (currentVolume == maxVolume) {
+            return;
         }
+        ++currentVolume;
     }
 
     public void setPrevVolume() {
         if (currentVolume == 0) {
-            currentVolume = 10;
-        } else {
-            currentVolume = currentVolume - 1;
+            return;
         }
+        --currentVolume;
     }
 
-    public void setVolume(int newVolume) {
-        if (newVolume < 0) {
-            return;
+    public void setCurrentVolume(int newVolume) {
+        if (newVolume >= 0) {
+            if (newVolume <= maxVolume) {
+                currentVolume = newVolume;
+            }
         }
-        if (newVolume > 10) {
-            return;
-        }
-        currentVolume = newVolume;
     }
 
 }
