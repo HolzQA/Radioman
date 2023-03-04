@@ -25,9 +25,9 @@ public class RadioTest {
                  "3,4"
         })
     public void testSetNextRadioctation(int curNum, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setRadiostation(curNum);
+        radio.setCurrentRadiostation(curNum);
 
         radio.setNextRadiostation();
 
@@ -40,9 +40,9 @@ public class RadioTest {
             "5,4"
     })
     public void testSetPrevRadioctation(int curNum, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setRadiostation(curNum);
+        radio.setCurrentRadiostation(curNum);
 
         radio.setPrevRadiostation();
 
@@ -56,9 +56,9 @@ public class RadioTest {
             "10,0"
     })
     public void testSetRadiostation(int insert, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setRadiostation(insert);
+        radio.setCurrentRadiostation(insert);
 
         Assertions.assertEquals(expected, radio.getCurrentRadiostation());
     }
@@ -69,9 +69,9 @@ public class RadioTest {
             "3,4"
     })
     public void testSetNextVolume(int curVol, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setVolume(curVol);
+        radio.setCurrentVolume(curVol);
 
         radio.setNextVolume();
 
@@ -85,9 +85,9 @@ public class RadioTest {
             "5,4"
     })
     public void testSetPrevVolume(int curVol, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setVolume(curVol);
+        radio.setCurrentVolume(curVol);
 
         radio.setPrevVolume();
 
@@ -101,9 +101,9 @@ public class RadioTest {
             "101,0"
     })
     public void testSetVolume(int insert, int expected) {
-        Radiostation radio = new Radiostation(0);
+        Radiostation radio = new Radiostation();
 
-        radio.setVolume(insert);
+        radio.setCurrentVolume(insert);
 
         Assertions.assertEquals(expected, radio.getCurrentVolume());
     }
